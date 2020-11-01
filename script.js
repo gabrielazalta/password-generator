@@ -5,6 +5,9 @@ var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var specialChar = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "`", "{", "|", "}", "~"];
 var numChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var pwd = [];
+var passwordFinal = "";
+
 
 function generatePassword (){
 
@@ -27,53 +30,52 @@ window.onload = alert("Welcome! Please click 'OK' to begin generating your secur
       var confirmLowerChar = (confirm ("Would you like to include lower case letters in your password?"));
       var confirmSpecialChar = (confirm ("Would you like to include special characters in your password?"));
       var confirmNumChar = (confirm ("Would you like to include numbers in your password?"));
-      //var pwd = [];
-      //var passwordFinal = "";
+
 
     // Set password per user parameters 
     if (confirmUpperChar && confirmLowerChar && confirmSpecialChar && confirmNumChar){
       pwd = upperChar.concat(lowerChar, specialChar, numChar);
     } 
-    if (confirmUpperChar && confirmLowerChar && confirmSpecialChar){
+    else if (confirmUpperChar && confirmLowerChar && confirmSpecialChar){
       pwd = upperChar.concat(lowerChar, specialChar);
     }
-    if (confirmUpperChar && confirmLowerChar && confirmNumChar){
+    else if (confirmUpperChar && confirmLowerChar && confirmNumChar){
       pwd = upperChar.concat(lowerChar, numChar);
     }
-    if (confirmUpperChar && confirmSpecialChar && confirmNumChar){
+    else if (confirmUpperChar && confirmSpecialChar && confirmNumChar){
       pwd = upperChar.concat(specialChar, numChar);
     }
-    if (confirmLowerChar && confirmSpecialChar && confirmNumChar){
+    else if (confirmLowerChar && confirmSpecialChar && confirmNumChar){
       pwd = lowerChar.concat(specialChar, numChar);
     }
-    if (confirmUpperChar && confirmLowerChar){
+    else if (confirmUpperChar && confirmLowerChar){
       pwd = upperChar.concat(lowerChar);
     }
-    if (confirmUpperChar && confirmSpecialChar){
+    else if (confirmUpperChar && confirmSpecialChar){
       pwd = upperChar.concat(specialChar);
     }
-    if (confirmUpperChar && confirmNumChar){
+    else if (confirmUpperChar && confirmNumChar){
       pwd = upperChar.concat(numChar);
     }
-    if (confirmLowerChar && confirmSpecialChar){
+    else if (confirmLowerChar && confirmSpecialChar){
       pwd = lowerChar.concat(specialChar);
     }
-    if (confirmLowerChar && confirmNumChar){
+    else if (confirmLowerChar && confirmNumChar){
       pwd = lowerChar.concat(numChar);
     }
-    if (confirmNumChar && confirmSpecialChar){
+    else if (confirmNumChar && confirmSpecialChar){
       pwd = numChar.concat(specialChar);
     }
-    if (confirmUpperChar){
+    else if (confirmUpperChar){
       pwd = upperChar;
     }
-    if (confirmLowerChar){
+    else if (confirmLowerChar){
       pwd = lowerChar;
     }
-    if (confirmSpecialChar){
+    else if (confirmSpecialChar){
       pwd = specialChar;
     }
-    if (confirmNumChar){
+    else if (confirmNumChar){
       pwd = numChar;
     }
     
@@ -86,14 +88,14 @@ window.onload = alert("Welcome! Please click 'OK' to begin generating your secur
     // Confirm all OK
     alert("You have set the password parameters succesfully, click OK to view your password.");
 
-    /*else {
+    //Loop for multiple passwords
       for (var i = 0; i < confirmLength; i++) {
         var random = Math.floor(Math.random () * pwd.confirmLength);
         passwordFinal += pwd[random];
-      }*/
-    } 
+      }
   }
-  //document.getElementById("password").innerHTML = passwordFinal;
+  }
+  document.getElementById("password").innerHTML = passwordFinal;
 
 
 
