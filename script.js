@@ -6,16 +6,18 @@ var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var specialChar = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "`", "{", "|", "}", "~"];
 var numChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var pwd = [];
-var passwordFinal = "";
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); {
+//generateBtn.addEventListener("click", writePassword); {
 
   // Generate password
   function generatePassword (){
+
+    var passwordFinal = "";
 
     // Welcome message
     window.onload = alert("Welcome! Please click 'OK' to begin generating your secure password.")  
@@ -110,7 +112,7 @@ generateBtn.addEventListener("click", writePassword); {
       passwordText.value = password;  
     }
     generateBtn.addEventListener("click", writePassword);
-  }
+  //}
   
 
 
