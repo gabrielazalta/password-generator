@@ -98,9 +98,10 @@ generateBtn.addEventListener("click", writePassword); {
         for (var i = 0; i < confirmLength; i++) {
           var random = Math.floor(Math.random () * pwd.length);
           passwordFinal += pwd[random];
-          document.getElementById("password").innerHTML = passwordFinal;
+          //document.getElementById("password").innerHTML = passwordFinal;
         }
       }
+      return passwordFinal
     }
     // Write password to the #password input
     function writePassword() {
